@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+GB+S+Guides:ital@0;1&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+}
+
+.container{
+    padding: 2rem 7rem;
+    border-radius: 14px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+.user-result img{
+    transform: rotate(90deg);
+}
+
+.bot-result img{
+    transform: rotate(-90deg) rotateY(180deg);
+}
+
+.result-images{
+    display: flex;
+    column-gap: 7rem;
+}
+
+.result-images img{
+    width: 100px;
+}
+
+.container.start .user-result{
+    transform-origin: left;
+    animation: userShake 0.7s ease infinite;
+}
+
+.container.start .bot-result{
+    transform-origin: right;
+    animation: botShake 0.7s ease infinite;
+}
+
+.result{
+    text-align: center;
+    font-size: 2rem;
+    color: #7d2ea8;
+    margin-top: 1.5rem;
+}
+
+.result-score{
+    text-align: center;
+    font-size: 2rem;
+    color: #7d2ea8;
+    margin-top: 1.5rem;
+}
+
+.option-images{
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+    justify-content: space-between;
+
+}
+
+.container.start .option-images{
+    pointer-events: none;
+}
+
+.option-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.option-image:hover{
+    opacity: 1;
+}
+
+.option-image.active{
+    opacity: 1;
+}
+
+.option-image img{
+    pointer-events: none;
+}
+
+.option-image img{
+    width: 50px;
+}
+
+.option-image p{
+    margin-top: 1rem;
+    font-weight: 500;
+    color: #7d2ea8;
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+footer{
+    position: absolute;
+    bottom: 2rem;
+    color: #7d2ea8;
+    font-size: 1.4rem;
+}
+
+a{
+    color: #7d2ea8;
+    text-decoration: none;
+}
+
+@keyframes userShake{
+    50%{
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes botShake{
+    50%{
+        transform: rotate(-10deg);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        padding: 1.6rem;
+    }
+
+    .option-image img{
+        width: 30px;
+    }
+
+    .option-image p{
+        font-size: 0.7rem;
+    }
+    
+    .result-images img{
+        width: 70px;
+    }
+
+    .result{
+        text-align: center;
+        font-size: 1.5rem;
+        color: #7d2ea8;
+        margin-top: 1rem;
+    }
+    
+    .result-score{
+        text-align: center;
+        font-size: 1.5rem;
+        color: #7d2ea8;
+        margin-top: 1rem;
+    }
+}
